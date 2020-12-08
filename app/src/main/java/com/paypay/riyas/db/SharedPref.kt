@@ -3,14 +3,6 @@ package com.paypay.riyas.db
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import androidx.datastore.DataStore
-import androidx.datastore.preferences.Preferences
-import androidx.datastore.preferences.createDataStore
-import androidx.datastore.preferences.edit
-import androidx.datastore.preferences.preferencesKey
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
-
 
 class SharedPref(context: Context) {
     private val applicationContext = context.applicationContext
@@ -43,7 +35,6 @@ class SharedPref(context: Context) {
 
 
     companion object {
-        val LAST_SYNCED = preferencesKey<Long>(name = "last_synced")
         val LAST_SYNCED_TIME =  "last_synced"
     }
 }
