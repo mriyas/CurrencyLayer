@@ -1,6 +1,7 @@
 # CurrencyLayer
 
-It is a sample application to demonstrate the usage of the following
+It is a sample application that allows a user view exchange rates for any given currency. I have used the following components to buid the app.
+
 - Retrofit API
 - MVVM
 - Room
