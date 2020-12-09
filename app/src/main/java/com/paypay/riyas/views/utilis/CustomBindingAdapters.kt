@@ -26,14 +26,18 @@ object CustomBindingAdapters {
         }
         val selectedCurrencyRate=currentCurrency.value?.rate
         if(selectedCurrencyRate!=null) {
-            val multi = multiplier.get()
-           val displayData= (rate.toBigDecimal()/selectedCurrencyRate.toBigDecimal()) * multi?.toBigDecimal()!!
-           // val displayData = (rate.toBigDecimal()/usdRate.value!!.toBigDecimal() ) * multi?.toBigDecimal()!!
-            tv.text = "$displayData"
+            try {
+                val multi = multiplier.get()
+                val displayData =
+                    (rate.toBigDecimal() / selectedCurrencyRate.toBigDecimal()) * multi?.toBigDecimal()!!
+                // val displayData = (rate.toBigDecimal()/usdRate.value!!.toBigDecimal() ) * multi?.toBigDecimal()!!
+                tv.text = "$displayData"
+            }catch ( ex : Exception){
+                tv.text = " -- "
+
+            }
         }else{
-            val multi = multiplier.get()
-            val displayData = (rate.toBigDecimal() ) * multi?.toBigDecimal()!!
-            tv.text = "$displayData"
+            tv.text = " -- "
         }
         //view.visibility = if (items > 0) View.VISIBLE else View.GONE
     }
